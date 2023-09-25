@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">DogsBrowser-views</string>
+    <string name="app_name">Dogs Browser</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

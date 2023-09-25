@@ -3,6 +3,8 @@ plugins {
     id("org.jetbrains.kotlin.android")
     id("com.google.devtools.ksp")
     id("androidx.navigation.safeargs.kotlin")
+    id("org.jetbrains.kotlin.kapt")
+
 }
 
 android {
@@ -34,6 +36,11 @@ android {
     }
     kotlinOptions {
         jvmTarget = "17"
+    }
+
+    buildFeatures {
+        viewBinding = true
+        dataBinding = true
     }
 }
 
