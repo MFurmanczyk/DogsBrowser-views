@@ -4,6 +4,7 @@ plugins {
     id("com.google.devtools.ksp")
     id("androidx.navigation.safeargs.kotlin")
     id("org.jetbrains.kotlin.kapt")
+    id("com.google.dagger.hilt.android")
 
 }
 
@@ -67,6 +68,10 @@ dependencies {
 
     val coil_version = "2.4.0"
     implementation("io.coil-kt:coil:$coil_version")
+
+    val hilt_version = "2.48"
+    implementation("com.google.dagger:hilt-android:$hilt_version")
+    ksp("com.google.dagger:hilt-android-compiler:$hilt_version")
 
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
