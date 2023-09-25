@@ -5,9 +5,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
+import coil.load
 import com.mfurmanczyk.dogsbrowser.R
 import com.mfurmanczyk.dogsbrowser.databinding.ItemDogBinding
 import com.mfurmanczyk.dogsbrowser.model.DogBreed
+import com.mfurmanczyk.dogsbrowser.util.getProgressDrawable
 
 class DogsListAdapter (val dogsList: ArrayList<DogBreed>): RecyclerView.Adapter<DogsListAdapter.DogViewHolder>() {
 
@@ -33,6 +35,10 @@ class DogsListAdapter (val dogsList: ArrayList<DogBreed>): RecyclerView.Adapter<
         holder.binding.lifespan.text = dogsList[position].lifespan
         holder.viewContainer.setOnClickListener {
             Navigation.findNavController(it).navigate(ListFragmentDirections.actionDetailFragment())
+        }
+        holder.binding.imageView.load(dogsList[position].imageUrl) {
+            crossfade(true)
+            placeholder(getProgressDrawable(holder.binding.imageView.context))
         }
     }
 

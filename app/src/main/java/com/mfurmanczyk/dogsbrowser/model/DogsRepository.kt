@@ -13,12 +13,12 @@ interface DogsRepository {
     /**
      * Retrieves dog with given [id] from datasource.
      */
-    suspend fun getDogById(id: Int): Flow<DogBreed> = flowOf()
+    fun getDogById(id: Int): Flow<DogBreed> = flowOf()
 
     /**
      * Inserts all  [dogs] into datasource
      */
-    suspend fun insertAll(vararg dogs: DogBreed): Flow<List<Long>> = flowOf()
+    suspend fun insertAll(vararg dogs: DogBreed): List<Long> = listOf()
 
     /**
      * Removes all entries from datasource
