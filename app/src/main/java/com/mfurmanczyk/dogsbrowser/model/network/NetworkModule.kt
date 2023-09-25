@@ -25,7 +25,6 @@ object NetworkModule {
     fun provideApiService(retrofit: Retrofit): ApiService = retrofit.create(ApiService::class.java)
 
     @Provides
-    @RemoteDataSource
     fun provideApiHelper(apiService: ApiService): ApiHelper = RemoteDogsApiHelper(apiService)
 
     @Provides
