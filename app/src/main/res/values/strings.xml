@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">Dogs Browser</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="dog_name">DogName</string>
+    <string name="dog_purpose">Dog purpose</string>
+    <string name="dog_temperament">Dog temperament</string>
+    <string name="dog_lifespan">Dog lifespan</string>
+    <string name="loading_data_error">Loading data error</string>
+    <string name="lifespan">Lifespan</string>
 </resources>
