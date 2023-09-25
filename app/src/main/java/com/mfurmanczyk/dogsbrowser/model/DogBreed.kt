@@ -1,11 +1,13 @@
 package com.mfurmanczyk.dogsbrowser.model
 
+import com.google.gson.annotations.SerializedName
+
 data class DogBreed(
-    val breedId: String?,
-    val dogBreed: String?,
-    val lifespan: String?,
-    val breedGroup: String?,
-    val bredFor: String?,
-    val temperament: String?,
-    val imageUrl: String?
+    @SerializedName("id") val breedId: String?,
+    @SerializedName("name") val dogBreed: String?,
+    @SerializedName("life_span") val lifespan: String?,
+    @SerializedName("breed_group") val breedGroup: String?,
+    @SerializedName("bred_for") val bredFor: String?,
+    @SerializedName("temperament") val temperament: String?,
+    @SerializedName("url") val imageUrl: String?
 )
