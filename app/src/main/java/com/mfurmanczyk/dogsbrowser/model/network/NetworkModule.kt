@@ -30,6 +30,6 @@ object NetworkModule {
 
     @Provides
     @RemoteDataSource
-    fun provideDogsRepository(apiHelper: ApiHelper) : DogsRepository = RemoteDogsRepository(apiHelper = apiHelper)
+    fun provideDogsRepository(@RemoteDataSource apiHelper: ApiHelper) : DogsRepository = RemoteDogsRepository(apiHelper = apiHelper)
 
 }
