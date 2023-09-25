@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.NavigationUI
 import com.mfurmanczyk.dogsbrowser.R
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -19,6 +20,7 @@ class MainActivity : AppCompatActivity() {
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.fragment) as NavHostFragment
         navController = navHostFragment.navController
         setSupportActionBar(findViewById(R.id.toolbar))
+        NavigationUI.setupActionBarWithNavController(this, navController)
 
     }
 

@@ -9,7 +9,7 @@ import com.mfurmanczyk.dogsbrowser.model.annotation.RoomDataSource
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.catch
-import kotlinx.coroutines.flow.firstOrNull
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
@@ -48,14 +48,10 @@ class ListViewModel @Inject constructor(
 
     private fun fetchFromRemote() {
         viewModelScope.launch {
-            val cachedList = localRepository.getAllDogs().firstOrNull()
-            localRepository.deleteAll()
-            remoteRepository.getAllDogs().map { newList->
-                localRepository.insertAll(*newList.toTypedArray())
-            }.catch {
-                if (cachedList != null) {
-                    localRepository.insertAll(*cachedList.toTypedArray())
-                }
+            val dogs = remoteRepository.getAllDogs().first()
+            if(dogs.isNotEmpty()) {
+                localRepository.deleteAll()
+                localRepository.insertAll(*dogs.toTypedArray())
             }
         }
     }

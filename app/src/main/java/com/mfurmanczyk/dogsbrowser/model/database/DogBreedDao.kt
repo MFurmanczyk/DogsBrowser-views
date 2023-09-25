@@ -9,14 +9,14 @@ import kotlinx.coroutines.flow.Flow
 @Dao
 interface DogBreedDao {
 
-    @Insert
-    fun insertAll(vararg dogs: DogBreed): List<Long>
-
     @Query("SELECT * FROM DogBreed")
     fun getAllDogs(): Flow<List<DogBreed>>
 
     @Query("SELECT * FROM DogBreed WHERE uuid = :dogId")
     fun getDog(dogId: Int): Flow<DogBreed>
+
+    @Insert
+    suspend fun insertAll(vararg dogs: DogBreed): List<Long>
 
     @Query("DELETE FROM DogBreed")
     suspend fun  deleteAll()
