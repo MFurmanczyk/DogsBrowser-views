@@ -7,4 +7,10 @@
     <string name="dog_lifespan">Dog lifespan</string>
     <string name="loading_data_error">Loading data error</string>
     <string name="lifespan">Lifespan</string>
+    <string name="send_sms">Send SMS</string>
+    <string name="sms_permission_title">Send SMS permission</string>
+    <string name="sms_permission_message">This app requires access to send an SMS.</string>
+    <string name="cancel">Cancel</string>
+    <string name="confirm">Confirm</string>
+    <string name="to">To:</string>
 </resources>

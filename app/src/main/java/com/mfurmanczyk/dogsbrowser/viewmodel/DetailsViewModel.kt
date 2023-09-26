@@ -15,7 +15,8 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 data class DetailsUiState(
-    val dog: DogBreed? = null
+    val dog: DogBreed? = null,
+    val sendSmsStarted: Boolean = false
 )
 
 @HiltViewModel
@@ -31,9 +32,15 @@ class DetailsViewModel @Inject constructor(
         viewModelScope.launch {
             repository.getDogById(id).map { dog ->
                 _uiState.update {
-                    DetailsUiState(dog)
+                    it.copy(dog = dog)
                 }
             }.first()
+        }
+    }
+
+    fun switchSendSms(started: Boolean) {
+        _uiState.update {
+            it.copy(sendSmsStarted = started)
         }
     }
 }
