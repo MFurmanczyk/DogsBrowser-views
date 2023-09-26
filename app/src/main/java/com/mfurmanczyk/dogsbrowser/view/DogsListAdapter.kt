@@ -1,15 +1,18 @@
 package com.mfurmanczyk.dogsbrowser.view
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.Navigation
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.mfurmanczyk.dogsbrowser.R
 import com.mfurmanczyk.dogsbrowser.databinding.ItemDogBinding
 import com.mfurmanczyk.dogsbrowser.model.DogBreed
 import com.mfurmanczyk.dogsbrowser.util.getProgressDrawable
+
+private const val TAG = "DogsListAdapter"
 
 class DogsListAdapter (val dogsList: ArrayList<DogBreed>): RecyclerView.Adapter<DogsListAdapter.DogViewHolder>() {
 
@@ -34,7 +37,9 @@ class DogsListAdapter (val dogsList: ArrayList<DogBreed>): RecyclerView.Adapter<
         holder.binding.dogName.text = dogsList[position].dogBreed
         holder.binding.lifespan.text = dogsList[position].lifespan
         holder.viewContainer.setOnClickListener {
-            Navigation.findNavController(it).navigate(ListFragmentDirections.actionDetailFragment())
+            Log.i(TAG, "onBindViewHolder: navigating")
+            val action = ListFragmentDirections.actionDetailFragment(dogsList[position].uuid)
+            it.findNavController().navigate(action)
         }
         holder.binding.imageView.load(dogsList[position].imageUrl) {
             crossfade(true)
