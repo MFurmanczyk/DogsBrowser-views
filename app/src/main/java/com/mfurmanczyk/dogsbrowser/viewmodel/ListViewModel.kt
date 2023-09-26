@@ -42,7 +42,7 @@ class ListViewModel @Inject constructor(
     val uiState: StateFlow<ListUiState> = remoteState.combine(localRepository.getAllDogs()) { remoteState, localDogs ->
 
         when(remoteState) {
-            is ListUiState.Success -> remoteState
+            is ListUiState.Success -> ListUiState.Success(localDogs)
             is ListUiState.Loading -> remoteState
             is ListUiState.Error -> {
                 if(localDogs.isNotEmpty()) {
