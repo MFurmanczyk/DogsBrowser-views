@@ -40,6 +40,7 @@ class ListFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         viewModel.refresh()
+        Log.i(TAG, "onViewCreated: refreshing")
 
         binding.dogsList.apply {
             layoutManager = LinearLayoutManager(context)
@@ -47,9 +48,8 @@ class ListFragment : Fragment() {
         }
 
         binding.refreshLayout.setOnRefreshListener {
-            binding.dogsList.visibility = View.GONE
-            binding.listError.visibility = View.GONE
             viewModel.refresh()
+            Log.i(TAG, "onViewCreated: refreshing from listener")
             binding.refreshLayout.isRefreshing = false
         }
 
