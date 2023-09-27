@@ -7,14 +7,8 @@ Users can browse dog breed details and send them via SMS.
 
 <p align="center">
   <img src="./screenshots/Screenshot_list.png" width="250" title="list">
-</p>
-
-<p align="center">
-  <img src="./screenshots/Screenshot_sms.png" width="250" title="sms">
-</p>
-
-<p align="center">
   <img src="./screenshots/Screenshot_details.png" width="250" title="details">
+  <img src="./screenshots/Screenshot_sms.png" width="250" title="sms">
 </p>
 
 # Technology & Techniques
