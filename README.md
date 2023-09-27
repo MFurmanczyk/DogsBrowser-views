@@ -27,4 +27,4 @@ Used technology and programming techniques
 * SMS Manager
 
   # Credits
-  [API](https://raw.githubusercontent.com/DevTides/DogsApi/master/dogs.json) used in this app.
+  [API](https://raw.githubusercontent.com/DevTides/DogsApi/master/dogs.json) used in this app. The idea for the app is based on [the Udemy course](https://www.udemy.com/course/androidjetpack/). I made several modifications to the application architecture, making it cleaner.
