@@ -21,6 +21,8 @@ In order to try the app just clone the repository and build the project with And
 Used technology and programming techniques
 * Android SDK
 * Android Views
+* View binding
+* Data binding
 * Kotlin
 * Coroutines
 * Navigation
